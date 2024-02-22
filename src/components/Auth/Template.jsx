@@ -1,15 +1,14 @@
 import React, { useState } from 'react'
 import SignupForm from "./SignupForm"
 import LoginForm from "./LoginForm"
+import { useSelector } from 'react-redux'
 
 
 
 
 const Template = ({ title, description, formType }) => {
 
-    const [loading,setLoading] = useState(false);
-
-
+    const {loading} = useSelector((state) => state.auth)
 
   return (
     <div>

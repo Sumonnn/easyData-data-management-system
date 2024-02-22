@@ -21,12 +21,18 @@ database.connect();
 //middlewares
 app.use(express.json());
 app.use(cookieParser());
-app.use(
-    cors({
-        origin: "http://localhost:5173/",
-        credentials: true,
-    })
-)
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+});
+// app.use(
+//     cors({
+//         origin: "http://localhost:5173/",
+//         credentials: true,
+//     })
+// )
 
 //define routes
 app.use("/api/v1/auth", profileRoutes);

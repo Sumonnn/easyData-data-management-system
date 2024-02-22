@@ -68,8 +68,8 @@ export function signUp(
             navigate("/login")
         } catch (error) {
             console.log("SIGNUP API ERROR............", error)
-            toast.error("Signup Failed")
-            navigate("/")
+            // toast.error("Signup Failed")
+            // navigate("/")
         }
         dispatch(setLoading(false))
         toast.dismiss(toastId)
@@ -81,6 +81,7 @@ export function login(email, password, navigate) {
         const toastId = toast.loading("Loading...")
         dispatch(setLoading(true))
         try {
+            console.log("jshbhd hello jiiiii");
             const response = await apiconnecter("POST", LOGIN_API, {
                 email,
                 password,
@@ -114,8 +115,7 @@ export function login(email, password, navigate) {
 export function logout(navigate) {
     return (dispatch) => {
         dispatch(setToken(null))
-        dispatch(setUser(null))
-        dispatch(resetCart())
+        // dispatch(setUser(null))
         localStorage.removeItem("token")
         localStorage.removeItem("profile")
         toast.success("Logged Out")

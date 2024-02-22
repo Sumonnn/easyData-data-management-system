@@ -4,12 +4,13 @@ import { BiArrowBack } from 'react-icons/bi';
 import { RxCountdownTimer } from "react-icons/rx";
 import { sendOtp, signUp } from '../services/operations/authAPI';
 import { Link, useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const VerifyEmail = () => {
 
     const [otp,setOtp] = useState("");
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const { signupData, loading } = useSelector((state) => state.auth);
  
     useEffect(()=>{
