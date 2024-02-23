@@ -73,6 +73,8 @@ exports.showAllUser = async (req, res) => {
         //fetch all user from DB
         const allUser = await User.find({});
 
+        // const allUser = await Profile.findById(req.user.id).populate("users");
+
         //return response
         res.status(200).json({
             success: true,

@@ -8,7 +8,7 @@ const { auth } = require("../middlewares/auth");
 
 //Route for user create, delete, edit and show
 router.post("/createUser", auth, createUser);
-router.get("/showAllUser", auth, showAllUser);
+router.get("/showAllUser", showAllUser);
 router.post("/deleteUser", auth, deleteUser);
 router.post("/editUser", auth, editUser);
 

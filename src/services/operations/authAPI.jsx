@@ -81,7 +81,6 @@ export function login(email, password, navigate) {
         const toastId = toast.loading("Loading...")
         dispatch(setLoading(true))
         try {
-            console.log("jshbhd hello jiiiii");
             const response = await apiconnecter("POST", LOGIN_API, {
                 email,
                 password,
